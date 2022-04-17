@@ -1,0 +1,48 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int numero = 0;
+        if(numero>0){
+            System.out.println("es positivo");
+        }else if(numero<0){
+            System.out.println("es negativo");
+        }else{
+            System.out.println("es 0");
+        }
+
+        while(numero<3){
+            numero++;
+            System.out.println(numero);
+        }
+
+        do{
+            numero++;
+            System.out.println(numero);
+        }while(numero<3);
+
+        for(int numeroFor=0; numeroFor<=3; numeroFor++) {
+            System.out.println(numeroFor);
+        }
+
+        var estacion ="verano";
+        switch(estacion) {
+            case "verano":
+                System.out.println("Es verano");
+                break;
+            case "invierno":
+                System.out.println("Es invierno");
+                break;
+            case "otoño":
+                System.out.println("Es otoño");
+                break;
+            case "primavera":
+                System.out.println("Es primavera");
+                break;
+            default:
+                System.out.println(estacion);
+        }
+
+    }
+}
