@@ -1,0 +1,47 @@
+package com.company;
+
+
+public class Main {
+
+    public static void main(String[] args){
+
+           Persona persona = new Persona();
+
+            persona.SetNombre("Alejandra");
+            persona.SetTelefono(3541810);
+            persona.SetEdad(12);
+
+            System.out.println(persona.getEdad());
+            System.out.println(persona.getNombre());
+            System.out.println(persona.getTelefono());
+        }
+    }
+
+    class Persona{
+        private String nombre;
+        private int edad;
+        private int telefono;
+
+
+        public void SetNombre(String nombre) {
+            this.nombre = nombre;
+        }
+        public String getNombre(){
+            return this.nombre;
+        };
+
+        public void SetEdad(int edad) {
+            this.edad= edad;
+        }
+        public int getEdad(){
+            return this.edad;
+        };
+
+        public void SetTelefono(int telefono) {
+            this.telefono= telefono;
+        }
+
+        public int getTelefono(){
+            return this.telefono;
+        };
+    }
