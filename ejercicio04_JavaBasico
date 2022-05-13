@@ -1,0 +1,81 @@
+package com.example;
+
+public class SmartDevice{
+
+    String marca;
+    String modelo;
+    String color;
+
+    public SmartDevice() {
+
+    }
+
+    public SmartDevice(String marca, String modelo, String color) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+    }
+
+    public static class SmartPhone extends SmartDevice {
+        int memoria;
+        String sistemaOperativo;
+
+        public SmartPhone() {
+            super();
+        }
+
+        public SmartPhone(String marca, String modelo, String color, int memoria, String sistemaOperativo) {
+            super(marca, modelo, color);
+            this.memoria = memoria;
+            this.sistemaOperativo = sistemaOperativo;
+
+        }
+
+        @Override
+        public String toString() {
+            return "marca=" + marca +
+                    ", modelo=" + modelo +
+                    ", color=" + color +
+                    ", memoria=" + memoria +
+                    ", sistemaOperativo=" + sistemaOperativo;
+        }
+    }
+
+    public static class SmartWatch extends SmartDevice {
+        double tamanoDePantalla;
+        String tipoDeConector;
+
+        public SmartWatch() {
+            super();
+        }
+
+        public SmartWatch(String marca, String modelo, String color, double tamanoDePantalla, String tipoDeConector) {
+            super(marca, modelo, color);
+            this.tamanoDePantalla = tamanoDePantalla;
+            this.tipoDeConector = tipoDeConector;
+        }
+
+        @Override
+        public String toString() {
+            return  "marca=" + marca +
+                    ", modelo=" + modelo +
+                    ", color=" + color +
+                    ", tamanoDePantalla=" + tamanoDePantalla +
+                    ", tipoDeConector=" + tipoDeConector;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        SmartPhone smartPhone = new SmartPhone("Nokia", "C01",
+                "Negro", 6, "Android");
+
+        SmartWatch smartWatch = new SmartWatch("Samsung", "Galaxy A52",
+                "Negro", 3.5, "Bluetooth");
+
+        System.out.println("El smartphone es: " + smartPhone);
+        System.out.println("El smartwatch es: " + smartWatch);
+
+    }
+
+}
