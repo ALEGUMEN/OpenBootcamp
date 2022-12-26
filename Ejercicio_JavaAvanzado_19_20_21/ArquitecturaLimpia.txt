@@ -1,0 +1,17 @@
+/** Identifica las características principales de la arquitectura limpia, indica en que casos se tendría que
+utilizar la arquitectura limpia y como lo harías
+
+la arquitectura limpia se caracteriza por
+*Es independiente de la UI
+*Tiene como objetivo la separación de dependencias
+*Es testable
+*Estructurar el codigo en capas contiguas.
+*Separacion de principios muy clara:
+ *Se utilizan 4 capas(
+- de entidades (define la capa de negocios),
+- de casos de uso (donde debe estar la lógica de la aplicación)
+- de controladores (se incluye la implementación de los métodos generales)
+- del resto de codigo (Frameworks, drivers,...)
+
+-La arquitectura limpia debe ser implementada en cualquier sistema en la medida de lo posible
+*/

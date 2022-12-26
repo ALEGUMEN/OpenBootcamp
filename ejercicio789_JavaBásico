@@ -1,0 +1,214 @@
+package com.example;
+
+import java.util.*;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+import java.util.Scanner;
+
+public class ejercicio789 {
+
+    /* 0. Escribe el código que devuelva una cadena al revés.
+        Por ejemplo, la cadena "hola mundo", debe retornar "odnum aloh" */
+
+ public static class StringReverse {
+
+     public static String reverse(String texto) {
+         if (texto.isEmpty()) {
+             return texto;
+         } else {
+             return reverse(texto.substring(1)) + texto.charAt(0);
+         }
+     }
+
+     public static void main(String[] args) {
+         StringReverse obj = new StringReverse();
+         String result = obj.reverse("Hola mundo");
+         System.out.println(result);
+     }
+ }
+
+    // 1. Crea un array unidimensional de Strings y recórrelo, mostrando únicamente sus valores.
+    public static class ArrayUnidimensional {
+
+        public static void main(String[] args) {
+
+            System.out.println("\nArray Unidimensional");
+
+            String textos[] = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes"};
+
+            for (String i : textos) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    // 2. Crea un array bidimensional de enteros y recórrelo, mostrando la posición y el valor de cada elemento en ambas dimensiones.
+    public static class ArrayBidimensional {
+
+        public static void main(String[] args) {
+
+            System.out.println("\nArray Bidimensional");
+
+            int[][] numerosEnteros = {
+                    {12, 23, 18},
+                    {89, 67, 43}
+            };
+
+            for (int i = 0; i < numerosEnteros.length; i++) {
+                for (int j = 0; j < numerosEnteros[i].length; j++) {
+
+                    System.out.println("En la Fila: " + (i + 1) + " y Columna: " + (j + 1) +
+                            ", el valor es: " + numerosEnteros[i][j] + "\n");
+                }
+            }
+        }
+    }
+
+
+    //3. Crea un "Vector" del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final.
+    public static class DatoVector{
+
+        public static void main(String[] args) {
+
+            System.out.println("\nVector");
+
+            Vector<Integer> vector = new Vector(128);
+            vector.add(15);
+            vector.add(25);
+            vector.add(35);
+            vector.add(45);
+            vector.add(65);
+
+            System.out.println(vector);
+
+            vector.remove(2);
+            vector.remove(1);
+
+            System.out.println(vector);
+
+              /*
+                4. Indica cuál es el problema de utilizar un Vector con la capacidad por defecto si tuviésemos
+                1000 elementos para ser añadidos al mismo.
+            */
+            System.out.println("Respuesta: se desperdicia mucha memoria ya que cada que sobrepasa el limite se duplica la capacidad");
+        }
+    }
+           /*5. Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento.*/
+           public static class ArrayListString {
+
+               public static void main(String[] args) {
+
+                   System.out.println("\nArray y LinkedList");
+
+                   ArrayList<String> lista = new ArrayList<String>();
+                   lista.add("Damian");
+                   lista.add("Pedro");
+                   lista.add("Alejandra");
+                   lista.add("Mauricio");
+
+                   LinkedList<String> linkedlist = new LinkedList<String>();
+
+                   for (int i = 0; i < lista.size(); i++) {
+                       linkedlist.add(i, lista.get(i));
+                   }
+
+                   System.out.println("Elementos del Array:");
+                   for (String elementos : lista) {
+                       System.out.print(elementos + ", ");
+                   }
+
+                   System.out.println("\n\nElementos de la LinkedList:");
+                   for (String elementos : linkedlist) {
+                       System.out.print(elementos + ", ");
+                   }
+               }
+           }
+        /*6. Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10.
+        A continuación, con otro bucle, recórrelo y elimina los numeros pares.
+        Por último, vuelve a recorrerlo y muestra el ArrayList final.
+        Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer "for" de relleno.*/
+        public static class ArrayListInt {
+
+            public static void main(String[] args) {
+
+                System.out.println("\nArrayInt");
+
+                ArrayList<Integer> lista = new ArrayList<Integer>();
+
+                for (int i = 1; i <= 10; i++) {
+                    lista.add(i);
+
+                    for (int num = 0; num < lista.size(); num++) {
+
+                        if (lista.get(num) % 2 == 0) {
+                            lista.remove(num);
+                        }
+                    }
+                }
+
+                System.out.println(lista);
+            }
+        }
+
+        /*7. Crea una función DividePorCero. Esta, debe generar una excepción ("throws") a su
+        llamante del tipo ArithmeticException que será capturada por su llamante (desde "main", por ejemplo).
+        Si se dispara la excepción, mostraremos el mensaje "Esto no puede hacerse".
+        Finalmente, mostraremos en cualquier caso: "Demo de código".*/
+
+    public static class DividePorCero {
+
+        private static int Dividir(int num1, int num2) throws ArithmeticException {
+            return num1 / num2;
+        }
+
+        public static void main(String[] args) {
+
+            System.out.println("\nDividePorCero");
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Indica los numeros a dividir: ");
+            System.out.print("primer numero: ");
+            int num1 = scanner.nextInt();
+            System.out.print("segundo numero: ");
+            int num2 = scanner.nextInt();
+            try {
+                System.out.println("Resultado: " + Dividir(num1, num2));
+            } catch (ArithmeticException e) {
+                System.out.println("La operacion no puede realizarse");
+            } finally {
+                System.out.println("Demo de código");
+            }
+        }
+    }
+    /*8. Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: "fileIn" y "fileOut".
+    La tarea de la función será realizar la copia del fichero dado en el parámetro "fileIn" al fichero dado en "fileOut".*/
+    public static class CopiarFicheros {
+
+        private static void copiarArchivos(String fileIn, String fileOut) {
+            try {
+                InputStream in = new FileInputStream(fileIn);
+                byte[] datos = in.readAllBytes();
+                in.close();
+
+                PrintStream out = new PrintStream(fileOut);
+                out.write(datos);
+                out.close();
+            } catch (Exception e) {
+                System.out.println("Excepcion: " + e.getMessage());
+            }
+        }
+
+        public static void main(String[] args) {
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Escriba el fichero de origen: ");
+            String fileIn = scanner.nextLine();
+            System.out.println("Escriba el fichero de destino: ");
+            String fileOut = scanner.nextLine();
+            copiarArchivos(fileIn, fileOut);
+        }
+    }
+
+   }
+

@@ -1,0 +1,7 @@
+package PatronDeComportamiento;
+
+public class AppFacebook implements PatronDeComportamiento.Receptor {
+    public AppFacebook() { /* compiled code */ }
+
+    public void notificacion(int actualizaciones) { /* compiled code */ }
+}

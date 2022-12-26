@@ -1,0 +1,12 @@
+Patrones de diseño más conocidos:
+*Patrones Creacionales (como se construyen los objetos) 
+    Patrón Singleton
+Una clase solo puede tener una instancia
+     Patron builder
+Crear objetos complejos de forma sencilla
+*Patrones estructurales (como estan estructuradas las clases y objetos)
+    Patron adapter 
+Usa herencia múltiple para adaptar una interfaz a otra 
+*Patrones de comportamiento (como los objetos interactúan entre sí)
+    Patron observer 
+Permite observar los cambios producidos por un objeto

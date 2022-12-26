@@ -1,0 +1,63 @@
+package Refactoring;
+
+import static java.util.Arrays.stream;
+
+public class FindOdd {
+
+    public static int findNumber(int[] numbers) {
+        /** Aplicando Refactoring */
+        return stream(numbers).reduce(0, (x, y) -> x ^ y);
+    }
+}
+        /** ----------- Primera Factorización-------------*/
+
+        /** int counter = 0;
+         *  int result = 0
+         *  for (int memory : numbers) {
+         *    int counter = 1;
+         *  for (int i = 0; i < numbers.length; i++) {
+         *      if ((counter == i) && (i < numbers.length - 1)) {
+         *          i++;
+         *      }
+         *      if (counter[i] == memory) {
+         *          result= memory;
+         *          counter++;
+         *      }
+         *    }
+         *  counter++;
+         *     if (counter % 2 != 0) {
+         *      result = memory;
+         *      break;
+         *      }
+         *   }
+         *  /
+
+         /** ----------- Código Original------------*/
+
+         /**
+          * public class FindOdd {
+          *  public static int findNumber(int[] a) {
+          *   int memory =0;
+          *   if(a.length == 1){
+          *       return a[0];
+          *     }else{
+          *       for (int i = 0; i < a.length; i++) {
+          *          int counter = 1;
+          *          memory = a[i];
+          *          for (int j = 0; j < a.length; j++) {
+          *             if(( i == j)&& (j <a.length-1)){
+          *               j++;
+          *             }
+          *             if (a[i] == a[j]) {
+          *               counter++;
+          *             }
+          *           }
+          *         if (counter % 2 != 0) {
+          *               break;
+          *          }
+          *        }
+          *      }
+          *     return memory;
+          *   }
+          * }
+          */
