@@ -1,4 +1,4 @@
-package com.example.Ejercicios_Spring_456.Entities;
+package com.example.Ejercicios_Spring_789.Entities;
 import jakarta.persistence.*;
 
 @Entity
@@ -65,3 +65,5 @@ public class Laptop {
     }
 
 }
+
+

@@ -1,7 +1,7 @@
-package com.example.Ejercicios_Spring_456;
+package com.example.Ejercicios_Spring_789;
 
-import com.example.Ejercicios_Spring_456.Entities.*;
-import com.example.Ejercicios_Spring_456.Repositories.*;
+import com.example.Ejercicios_Spring_789.Entities.*;
+import com.example.Ejercicios_Spring_789.Repositories.*;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.context.*;
@@ -11,6 +11,7 @@ public class Application {
 
 	public static void main(String[] args) {
             //contexto y repositorio
+
 			ApplicationContext context = SpringApplication.run(Application.class, args);
 			LaptopRepository repository = context.getBean(LaptopRepository.class);
 

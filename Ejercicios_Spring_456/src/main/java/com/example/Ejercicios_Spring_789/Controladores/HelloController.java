@@ -1,4 +1,4 @@
-package com.example.Ejercicios_Spring_456.Controladores;
+package com.example.Ejercicios_Spring_789.Controladores;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.*;
 public class HelloController {
     @GetMapping("/saludo")
     public String saludo(){
-        return "Hola desde HelloController";
+        return "HelloController";
     }
 }
